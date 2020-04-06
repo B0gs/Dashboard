@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="btn-group">
+      <div class="btn btn-primary" (click)="prevMonth()">
+        Précédent
+      </div>
+      <div class="btn btn-outline-secondary" (click)="today()">
+        Mois en cours
+      </div>
+      <div class="btn btn-primary" (click)="nextMonth()">
+        Suivant
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+    <h3>{{ currentDate.format('MMMM YYYY').toUpperCase() }}</h3>
+  </div>
+  <br>
+  <!--<div class="row border" *ngFor="let day of daysOfMonth">
+    <div class="col-1 text-center p-0">{{ day.format('dd D') }}</div>
+  </div>-->
+
+  <div class="row">
+    <div class="col p-0 text-center text-ellipsis text-capitalize font-weight-bold" *ngFor="let nameOfDay of namesOfDays">
+      {{ nameOfDay }}
+    </div>
+  </div>
+  <div class="row border-right border-row" *ngFor="let week of weeks">
+    <div class="col p-0">
+      <div class="row p-0 m-0">
+        <div class="col p-0 text-center text-ellipsis background-min-grey">
+          {{ 'Semaine ' + week[0].mDate.week()}}
+        </div>
+      </div>
+      <div class="row p-0 m-0">
+        <ng-container *ngFor="let day of week">
+          <div class="col p-0 border-cell text-ellipsis" [ngClass]="{'background-min-grey': isWeekEnd(day.mDate)}" mous>
+            <div class="row p-0 m-0">
+              <div class="col p-0 text-right text-ellipsis cal-day-number" [ngClass]="{'cal-out-month': !isActivatedMonth(day.mDate), 'text-today': isToday(day.mDate)}">
+                {{ day.mDate.date() }}
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+</div>

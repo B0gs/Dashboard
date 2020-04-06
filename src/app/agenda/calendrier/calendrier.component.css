@@ -1,0 +1,47 @@
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.border-row {
+  border: 1px solid #dee2e6;
+}
+
+.border-row:not(:last-child) {
+  border-bottom: 0;
+}
+
+.border-cell {
+  border-top: 1px solid #dee2e6;
+}
+
+.border-cell:not(:last-child) {
+  border-right: 1px solid #dee2e6;
+}
+
+.cal-day-number {
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: .5;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.background-min-grey {
+  background-color: #fafafa;
+}
+
+.background-grey {
+  background-color: #e1e1e1;
+}
+
+.cal-out-month {
+  opacity: .2;
+}
+
+.text-today {
+  color: #8b0000;
+  font-weight: bolder;
+}
